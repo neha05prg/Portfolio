@@ -1,312 +1,835 @@
+<!-- Save this as index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neha S | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
-      body { font-family: 'Poppins', sans-serif; }
-    </style>
-  </head>
-  <body class="bg-[#f5f7fa] dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full top-0 left-0 z-50 bg-[#f5f7fa] dark:bg-gray-800 text-[#1a1a1a] dark:text-white shadow-md transition-all duration-300">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#hero" class="text-2xl font-bold tracking-widest text-neon-blue drop-shadow-glow">NEHAS</a>
-        <button id="nav-toggle" class="md:hidden text-[#1a1a1a] dark:text-white focus:outline-none transition-transform duration-300" aria-label="Toggle navigation" tabindex="0">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-        <ul id="nav-menu" class="hidden md:flex space-x-8 text-lg font-semibold">
-          <li><a href="#hero" class="nav-link hover:text-neon-blue transition-colors duration-300">Home</a></li>
-          <li><a href="#about" class="nav-link hover:text-neon-blue transition-colors duration-300">About</a></li>
-          <li><a href="#projects" class="nav-link hover:text-neon-blue transition-colors duration-300">Projects</a></li>
-          <li><a href="#timeline" class="nav-link hover:text-neon-blue transition-colors duration-300">Experience</a></li>
-          <li><a href="#contact" class="nav-link hover:text-neon-blue transition-colors duration-300">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-4 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#00e6fe] transition-colors duration-300" role="switch" tabindex="0">
-          <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <ul id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 space-y-4 text-lg font-semibold bg-[#f5f7fa] dark:bg-gray-800 text-[#1a1a1a] dark:text-white bg-opacity-95">
-        <li><a href="#hero" class="nav-link block hover:text-neon-blue transition-colors duration-300">Home</a></li>
-        <li><a href="#about" class="nav-link block hover:text-neon-blue transition-colors duration-300">About</a></li>
-        <li><a href="#projects" class="nav-link block hover:text-neon-blue transition-colors duration-300">Projects</a></li>
-        <li><a href="#timeline" class="nav-link block hover:text-neon-blue transition-colors duration-300">Experience</a></li>
-        <li><a href="#contact" class="nav-link block hover:text-neon-blue transition-colors duration-300">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Hero Section -->
-    <section id="hero" class="relative flex items-center justify-center min-h-screen pt-24 pb-12 bg-[#f5f7fa] dark:bg-gray-900 overflow-hidden transition-colors duration-300">
-      <!-- Animated Blobs Background -->
-      <div class="absolute inset-0 -z-10">
-        <div class="blob bg-gradient-to-tr from-pink-200 via-blue-200 to-purple-200 opacity-70 w-80 h-80 rounded-full absolute top-10 left-1/4 animate-blob1"></div>
-        <div class="blob bg-gradient-to-tr from-blue-100 via-green-200 to-cyan-200 opacity-60 w-72 h-72 rounded-full absolute bottom-10 right-1/4 animate-blob2"></div>
-        <div class="blob bg-gradient-to-tr from-purple-100 via-pink-100 to-blue-200 opacity-50 w-64 h-64 rounded-full absolute top-1/2 left-1/2 animate-blob3"></div>
-      </div>
-      <div class="max-w-2xl w-full flex flex-col items-center text-center px-4">
-        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-neon-blue drop-shadow-glow">Creative Full Stack Developer</h1>
-        <p id="hero-intro" class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 opacity-0 translate-y-6">Motivated developer passionate about building beautiful, scalable, and user-friendly web applications. I love turning ideas into reality with code and design.</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#projects" class="cta-btn bg-[#00e6fe] text-white font-semibold px-7 py-3 rounded-lg shadow-lg hover:scale-105 hover:shadow-neon transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e6fe] focus:ring-offset-2">View My Work</a>
-          <a href="#contact" class="cta-btn bg-white dark:bg-gray-800 text-[#00e6fe] dark:text-[#00e6fe] border-2 border-[#00e6fe] font-semibold px-7 py-3 rounded-lg shadow hover:bg-[#00e6fe] hover:text-white hover:scale-105 hover:shadow-neon transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e6fe] focus:ring-offset-2">Contact Me</a>
-        </div>
-      </div>
-    </section>
-    <!-- About Me -->
-    <section id="about" class="relative bg-[#f5f7fa] dark:bg-gray-900 py-20 px-4 flex items-center justify-center transition-colors duration-300">
-      <div class="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
-        <!-- Profile Image -->
-        <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
-          <div class="relative w-40 h-40 md:w-56 md:h-56 rounded-full shadow-lg bg-gradient-to-tr from-[#00e6fe] via-white to-[#a78bfa] p-2 animate-float">
-            <img src="NEHA.jpg" alt="Neha S Profile" class="w-full h-full object-cover rounded-full border-4 border-white shadow-xl" />
-          </div>
-        </div>
-        <!-- About Content -->
-        <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4 fade-up">About Me</h2>
-          <p class="text-gray-700 dark:text-gray-300 text-base md:text-lg mb-6 fade-up delay-100">I'm Neha, a passionate Full Stack Developer who loves building beautiful, scalable, and user-centric web applications. I thrive on solving problems and bringing creative ideas to life with code and design.</p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full fade-up delay-200">
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">CSS</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">PHP</span>
-            <span class="skill-badge">MySQL</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Flask</span>
-            <span class="skill-badge">Tailwind CSS</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Projects -->
-    <section id="projects" class="bg-[#f5f7fa] dark:bg-gray-900 py-20 px-4 transition-colors duration-300">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-10 text-center fade-up">Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project Card 1 -->
-          <div class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center fade-up">
-            <div class="w-full h-40 mb-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Villa Bliss" class="object-cover w-full h-full" />
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Villa Bliss</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 text-center">A villa booking management system with user login, admin panel, and payment integration.</p>
-            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-              <span class="project-badge">PHP</span>
-              <span class="project-badge">HTML</span>
-              <span class="project-badge">CSS</span>
-              <span class="project-badge">JavaScript</span>
-              <span class="project-badge">MySQL</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="#" class="project-btn alt">Live Demo</a>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-         
-          <!-- Project Card 3 -->
-          <div class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center fade-up delay-200">
-            <div class="w-full h-40 mb-4 rounded-xl overflow-hidden bg-gradient-to-tr from-purple-100 via-pink-100 to-blue-100 flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Portfolio Website" class="object-cover w-full h-full" />
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Portfolio Website</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 text-center">
-              A modern, animated portfolio to showcase projects and skills with a creative UI.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-              <span class="project-badge">HTML</span>
-              <span class="project-badge">Tailwind CSS</span>
-              <span class="project-badge">JavaScript</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="#" class="project-btn">GitHub</a>
-              <a href="#" class="project-btn alt">Live Demo</a>
-            </div>
-          </div>
-          <!-- Project Card 4: Zapzoo Grocery Store -->
-          <div class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col items-center fade-up delay-300">
-            <div class="w-full h-40 mb-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-100 via-yellow-100 to-lime-100 flex items-center justify-center">
-              <img src="https://static.vecteezy.com/system/resources/previews/012/443/044/original/online-food-order-grocery-delivery-woman-shop-at-an-online-store-the-product-catalog-on-the-web-browser-page-stay-at-home-concept-quarantine-or-self-isolation-png.png" alt="Zapzoo Grocery Store" class="object-cover w-full h-full" />
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Zapzoo Grocery Store</h3>
-            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 text-center">
-              A full-featured online grocery store with product search, categories, shopping cart, order tracking, multiple payment options, and an admin panel.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4 justify-center">
-              <span class="project-badge">HTML</span>
-              <span class="project-badge">CSS</span>
-              <span class="project-badge">JavaScript</span>
-              <span class="project-badge">PHP</span>
-              <span class="project-badge">MySQL</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="#" class="project-btn">GitHub</a>
-              <a href="#" class="project-btn alt">Live Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Experience / Education -->
-    <section id="timeline" class="bg-[#f5f7fa] dark:bg-gray-900 py-20 px-4 transition-colors duration-300">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-12 text-center fade-up">Experience & Education</h2>
-        <div class="relative timeline">
-          <!-- Vertical line -->
-          <div class="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-[#00e6fe] via-[#a78bfa] to-[#f5f7fa] dark:to-gray-900 rounded-full -translate-x-1/2"></div>
-          <div class="flex flex-col gap-16">
-            <!-- Timeline Entry 1 (Right) -->
-            <div class="timeline-entry md:flex-row flex flex-col items-center md:items-start fade-side-right">
-              <div class="md:w-1/2 md:pr-8 flex justify-end md:justify-center order-2 md:order-1">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md">
-                  <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🛠️</span><span class="font-semibold text-gray-800 dark:text-white">Intern – Yuga Yatra Retail (OPC) Pvt. Ltd.</span></div>
-                  <div class="text-sm text-gray-500 dark:text-gray-300 mb-1">Jan 2025 – Apr 2025</div>
-                  <div class="text-gray-700 dark:text-gray-300 font-medium mb-1">Yuga Yatra Retail (OPC) Pvt. Ltd.</div>
-                  <div class="text-gray-600 dark:text-gray-300 text-sm">Worked on web development projects, collaborating with cross-functional teams to deliver scalable solutions.</div>
-                </div>
-              </div>
-              <div class="timeline-marker flex flex-col items-center order-1 md:order-2 md:items-center md:justify-center">
-                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border-4 border-[#00e6fe] shadow-lg text-2xl -mt-2 md:mt-0">🛠️</span>
-              </div>
-              <div class="md:w-1/2"></div>
-            </div>
-            <!-- Timeline Entry 2 (Left) -->
-            <div class="timeline-entry md:flex-row flex flex-col items-center md:items-start fade-side-left">
-              <div class="md:w-1/2"></div>
-              <div class="timeline-marker flex flex-col items-center order-1 md:order-2 md:items-center md:justify-center">
-                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border-4 border-[#a78bfa] shadow-lg text-2xl -mt-2 md:mt-0">🏢</span>
-              </div>
-              <div class="md:w-1/2 md:pl-8 flex justify-start md:justify-center order-2 md:order-3">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md">
-                  <div class="flex items-center gap-2 mb-2"><span class="font-semibold text-gray-800 dark:text-white">Bachelor of Computer Applications (BCA)</span></div>
-                  <div class="text-sm text-gray-500 dark:text-gray-300 mb-1">2022 – 2025</div>
-                  <div class="text-gray-700 dark:text-gray-300 font-medium mb-1">Milagres College</div>
-                  <div class="text-gray-600 dark:text-gray-300 text-sm">Academic training in web development, programming, and database management.</div>
-                </div>
-              </div>
-            </div>
-            <!-- Timeline Entry 3 (Right) -->
-            <div class="timeline-entry md:flex-row flex flex-col items-center md:items-start fade-side-right">
-              <div class="md:w-1/2 md:pr-8 flex justify-end md:justify-center order-2 md:order-1">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md">
-                  <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🎓</span><span class="font-semibold text-gray-800 dark:text-white">Python Full Stack Development</span></div>
-                  <div class="text-sm text-gray-500 dark:text-gray-300 mb-1">2025 (Ongoing)</div>
-                  <div class="text-gray-700 dark:text-gray-300 font-medium mb-1">Pentagon Space (Online)</div>
-                  <div class="text-gray-600 dark:text-gray-300 text-sm">Learning advanced full stack development with Python and modern frameworks.</div>
-                </div>
-              </div>
-              <div class="timeline-marker flex flex-col items-center order-1 md:order-2 md:items-center md:justify-center">
-                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 border-4 border-[#00e6fe] shadow-lg text-2xl -mt-2 md:mt-0">🎓</span>
-              </div>
-              <div class="md:w-1/2"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact Me -->
-    <section id="contact" class="bg-[#f5f7fa] dark:bg-gray-900 py-20 px-4 transition-colors duration-300">
-      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-        <!-- Left: Message & Socials -->
-        <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left mb-8 md:mb-0 fade-up">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">Let's Connect</h2>
-          <p class="text-gray-700 dark:text-gray-300 text-base md:text-lg mb-6">Have a project idea or collaboration in mind? I'd love to hear from you.</p>
-          <div class="flex gap-6 justify-center md:justify-start">
-            <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-            <a href="mailto:nehasdeviga5@gmail.com" class="social-icon" aria-label="Email"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm-16 12V8.99l7.99 6.99c.39.34.96.34 1.35 0L20 8.99V18H4z"/></svg></a>
-          </div>
-        </div>
-        <!-- Right: Contact Form -->
-        <div class="flex-1 w-full max-w-md fade-up delay-100">
-          <?php if (isset($_GET['success'])): ?>
-            <div class="mb-4 p-3 rounded-lg text-center font-semibold <?php echo $_GET['success'] === '1' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'; ?> dark:bg-gray-800 dark:text-green-400 dark:text-red-400">
-              <?php echo $_GET['success'] === '1' ? 'Thank you! Your message has been sent.' : 'Sorry, there was an error sending your message.'; ?>
-            </div>
-          <?php endif; ?>
-          <form action="contact.php" method="POST" class="space-y-6">
-            <div class="relative">
-              <input type="text" id="name" name="name" required class="peer floating-input dark:bg-gray-800 dark:text-white" placeholder=" " />
-              <label for="name" class="floating-label dark:text-gray-300">Name</label>
-            </div>
-            <div class="relative">
-              <input type="email" id="email" name="email" required class="peer floating-input dark:bg-gray-800 dark:text-white" placeholder=" " />
-              <label for="email" class="floating-label dark:text-gray-300">Email</label>
-            </div>
-            <div class="relative">
-              <textarea id="message" name="message" required rows="4" class="peer floating-input resize-none dark:bg-gray-800 dark:text-white" placeholder=" "></textarea>
-              <label for="message" class="floating-label dark:text-gray-300">Message</label>
-            </div>
-            <button type="submit" class="w-full bg-[#00e6fe] text-white font-semibold py-3 rounded-lg shadow-lg hover:scale-105 hover:shadow-neon transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e6fe] focus:ring-offset-2">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer id="footer" class="bg-[#f5f7fa] dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-6 px-4 fade-up transition-colors duration-300">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <!-- Left: Copyright -->
-        <div class="text-gray-600 dark:text-gray-300 text-sm">© 2025 Neha.S <span class="text-pink-500"></span></div>
-        <!-- Center: Quick Links -->
-        <nav class="flex gap-6 order-3 md:order-2">
-          <a href="#hero" class="footer-link">Home</a>
-          <a href="#about" class="footer-link">About</a>
-          <a href="#projects" class="footer-link">Projects</a>
-          <a href="#contact" class="footer-link">Contact</a>
-        </nav>
-        <!-- Right: Social Icons -->
-        <div class="flex gap-4 order-2 md:order-3">
-          <a href="https://github.com/neha05prg" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-          <a href= "https://www.linkedin.com/in/neha-s-1a1658319" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-          <a href="mailto:nehasdeviga5@gmail.com" class="footer-social" aria-label="Email"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zm-16 12V8.99l7.99 6.99c.39.34.96.34 1.35 0L20 8.99V18H4z"/></svg></a>
-        </div>
-      </div>
-      <!-- Scroll to Top Button -->
-      <button id="scrollToTop" class="fixed bottom-6 right-6 z-50 bg-[#00e6fe] text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:shadow-neon hover:animate-bounce transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00e6fe] focus:ring-offset-2" aria-label="Scroll to top">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-      </button>
-    </footer>
-    <!-- Main JS -->
-    <script src="main.js"></script>
-    <script>
-      function setTheme(isDark) {
-        const html = document.documentElement;
-        const toggleBtn = document.getElementById('theme-toggle');
-        const icon = document.getElementById('theme-toggle-icon');
-        if (isDark) {
-          html.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-          if (icon) icon.textContent = '🌞';
-          if (toggleBtn) toggleBtn.setAttribute('aria-checked', 'true');
-        } else {
-          html.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-          if (icon) icon.textContent = '🌙';
-          if (toggleBtn) toggleBtn.setAttribute('aria-checked', 'false');
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEHA S | Portfolio</title>
+  <meta name="description" content="Portfolio of NEHA S - Full Stack Developer & UI Designer. Projects, skills, education, and contact information." />
+  <meta name="keywords" content="Neha S, Portfolio, Full Stack Developer, UI Designer, Web Developer, Projects, Skills, Resume" />
+  <meta name="author" content="Neha S" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    :root {
+      --black: #18181b;
+      --white: #fff;
+      --yellow: #ffe066;
+      --yellow-dark: #ffd60a;
+      --gray: #f4f4f5;
+      --text: #232323;
+      --border: #e5e7eb;
+      --shadow: 0 2px 16px rgba(24,24,27,0.07);
+      --radius: 18px;
+      --font-main: 'Segoe UI', 'Inter', Arial, sans-serif;
+      --font-head: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, var(--black) 0%, var(--gray) 100%);
+      color: var(--text);
+      margin: 0;
+      min-height: 100vh;
+      transition: background 0.5s;
+    }
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--yellow-dark); }
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, var(--black) 80%, var(--yellow-dark) 100%);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      padding: 0.5rem 0;
+      animation: navbarDrop 0.7s;
+    }
+    @keyframes navbarDrop {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .navbar-container {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+    .navbar-logo {
+      font-family: var(--font-head);
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: var(--yellow-dark);
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 8px rgba(255,224,102,0.12);
+      transition: color 0.3s;
+    }
+    .navbar-logo:focus { outline: 2px solid var(--yellow-dark); }
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+    }
+    .nav-link:focus { outline: 2px solid var(--yellow-dark); }
+    .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--yellow-dark), var(--yellow));
+      transition: width 0.3s;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--yellow-dark);
+    }
+    .navbar-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--yellow-dark);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .navbar-mobile-menu {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .navbar-links { display: none; }
+      .navbar-menu-btn { display: block; }
+      .navbar-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        background: var(--black);
+        position: absolute;
+        top: 56px;
+        right: -100vw;
+        width: 200px;
+        box-shadow: var(--shadow);
+        padding: 1.5rem 1rem;
+        gap: 1.2rem;
+        transition: right 0.3s;
+        z-index: 999;
       }
+      .navbar-mobile-menu-active { right: 0; }
+    }
+    /* Hero Section */
+    .hero-section {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 1.2rem 60px;
+      background: linear-gradient(120deg, var(--black) 0%, var(--yellow) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Animated background effect */
+    .hero-bg-anim {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background: repeating-radial-gradient(circle at 60% 40%, var(--yellow-dark) 0, var(--yellow) 10%, transparent 30%);
+      animation: heroBgMove 8s linear infinite alternate;
+    }
+    @keyframes heroBgMove {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+    .hero-section > .container { position: relative; z-index: 1; }
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: 2.9rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 0.2em;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 12px rgba(24,24,27,0.08);
+      animation: fadeInDown 1.2s;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--yellow-dark);
+      margin-bottom: 0.5em;
+      letter-spacing: 0.04em;
+      animation: fadeIn 1.5s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .hero-typed {
+      color: var(--black);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1.1em;
+      min-height: 1.5em;
+      animation: fadeIn 2s;
+    }
+    .hero-intro {
+      max-width: 600px;
+      margin: 0 auto 1.5em auto;
+      color: #444;
+      font-size: 1.08rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      padding: 1.1em 1.2em;
+      box-shadow: 0 2px 12px rgba(24,24,27,0.06);
+      animation: fadeIn 2.2s;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.2em;
+      animation: fadeIn 2.5s;
+    }
+    .btn {
+      border-radius: 30px;
+      padding: 0.7rem 1.7rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid var(--yellow-dark);
+      background: var(--black);
+      color: var(--yellow-dark);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(24,24,27,0.07);
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:focus { outline: 2px solid var(--yellow-dark); }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--yellow-dark) 80%, var(--yellow) 100%);
+      color: var(--black);
+      border: 2px solid var(--yellow-dark);
+      box-shadow: 0 4px 16px rgba(255,224,102,0.13);
+    }
+    .btn-outline {
+      background: var(--black);
+      color: var(--yellow-dark);
+      border: 2px solid var(--yellow-dark);
+    }
+    .btn:hover {
+      background: var(--yellow);
+      color: var(--black);
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 6px 24px rgba(24,24,27,0.13);
+      animation: btnPop 0.3s;
+    }
+    @keyframes btnPop {
+      0% { transform: scale(1);}
+      60% { transform: scale(1.08);}
+      100% { transform: scale(1.06);}
+    }
+    .hero-contacts {
+      margin-top: 1.2em;
+      font-size: 0.98rem;
+      color: #666;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      animation: fadeIn 2.7s;
+    }
+    /* Section Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    /* About & Skills */
+    .about-section {
+      background: linear-gradient(120deg, var(--white) 60%, var(--yellow) 100%);
+      padding: 70px 0 50px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-bg-anim {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.10;
+      background: repeating-linear-gradient(135deg, var(--yellow-dark) 0 2px, transparent 2px 40px);
+      animation: aboutBgMove 10s linear infinite alternate;
+    }
+    @keyframes aboutBgMove {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+    .about-content {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-text {
+      flex: 1 1 340px;
+      min-width: 260px;
+      font-size: 1.12rem;
+      color: #232323;
+      margin-bottom: 1.5em;
+      background: rgba(255,255,255,0.85);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(24,24,27,0.06);
+      padding: 1.2em 1.3em;
+      transition: box-shadow 0.3s;
+      animation: fadeInLeft 1.2s;
+    }
+    @keyframes fadeInLeft {
+      0% { opacity: 0; transform: translateX(-40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .about-text strong { color: var(--yellow-dark); }
+    .skills-section {
+      flex: 1 1 320px;
+      min-width: 260px;
+      background: linear-gradient(120deg, var(--yellow) 60%, var(--white) 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5em 1.2em;
+      margin-bottom: 1.5em;
+      animation: fadeInRight 1.2s;
+    }
+    @keyframes fadeInRight {
+      0% { opacity: 0; transform: translateX(40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .skills-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 0.5em;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .skills-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1em;
+    }
+    .skills-list li {
+      margin-bottom: 0.4em;
+      padding-left: 1.2em;
+      position: relative;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .skills-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--yellow-dark);
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .skills-list li:hover, .skills-list li:focus {
+      color: var(--yellow-dark);
+    }
+    .skills-list li:hover::before, .skills-list li:focus::before {
+      color: var(--black);
+    }
+    /* Projects */
+    .projects-section {
+      background: var(--white);
+      padding: 70px 0 50px 0;
+    }
+    .projects-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .project-card {
+      background: linear-gradient(120deg, var(--gray) 60%, var(--yellow) 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--border);
+      min-width: 270px;
+      max-width: 340px;
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5em 1.2em;
+      transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s, border 0.2s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-12px) scale(1.045) rotate(-1deg);
+      box-shadow: 0 16px 40px rgba(24,24,27,0.18);
+      border-color: var(--yellow-dark);
+      background: linear-gradient(120deg, var(--yellow) 60%, var(--yellow-dark) 100%);
+      animation: cardPop 0.4s;
+    }
+    @keyframes cardPop {
+      0% { transform: scale(1); }
+      60% { transform: scale(1.08) rotate(-2deg); }
+      100% { transform: scale(1.045) rotate(-1deg); }
+    }
+    .project-title {
+      color: var(--black);
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.01em;
+    }
+    .project-desc {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 0.7em;
+      flex: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      margin-bottom: 0.7em;
+    }
+    .tag {
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.3em 0.9em;
+      border-radius: 16px;
+      font-size: 0.92em;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(255,224,102,0.08);
+      transition: background 0.2s, color 0.2s;
+    }
+    .project-btn {
+      margin-top: auto;
+      text-align: center;
+      width: 100%;
+    }
+    /* Contact */
+    .contact-section {
+      background: linear-gradient(120deg, var(--black) 60%, var(--yellow-dark) 100%);
+      color: var(--white);
+      padding: 70px 0 50px 0;
+    }
+    .contact-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      background: rgba(0,0,0,0.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      margin-bottom: 2em;
+    }
+    .contact-input, .contact-textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.8em 1em;
+      font-size: 1em;
+      color: var(--text);
+      background: var(--white);
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .contact-input:focus, .contact-textarea:focus {
+      border: 1.5px solid var(--yellow-dark);
+      outline: none;
+      box-shadow: 0 0 0 2px var(--yellow);
+    }
+    .contact-btn {
+      width: 100%;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 1em;
+    }
+    .contact-icons a {
+      color: var(--yellow-dark);
+      font-size: 1.7em;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .contact-icons a:hover, .footer-icons a:hover {
+      animation: iconBounce 0.4s;
+    }
+    @keyframes iconBounce {
+      0% { transform: scale(1);}
+      50% { transform: scale(1.2);}
+      100% { transform: scale(1.15);}
+    }
+    .contact-location {
+      text-align: center;
+      color: #e5e7eb;
+      font-size: 1em;
+    }
+    /* Footer */
+    .footer {
+      background: linear-gradient(90deg, var(--black) 80%, var(--yellow-dark) 100%);
+      color: var(--yellow-dark);
+      text-align: center;
+      padding: 1.2em 0 0.7em 0;
+      font-size: 1em;
+      margin-top: 40px;
+      letter-spacing: 0.04em;
+      border-top: 1.5px solid var(--border);
+    }
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 0.7em;
+    }
+    .footer-icons a {
+      color: var(--yellow-dark);
+      font-size: 1.7em;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .footer-copy {
+      color: var(--yellow-dark);
+      font-size: 1em;
+    }
+    /* Education */
+    .education-section {
+      background: var(--white);
+      padding: 50px 0 20px 0;
+    }
+    .education-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .education-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      color: var(--black);
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+      font-family: var(--font-head);
+    }
+    .education-details {
+      font-size: 1.15rem;
+      color: #222;
+      margin-bottom: 1.2rem;
+    }
+    .education-details div {
+      margin-bottom: 0.2rem;
+    }
+    .education-divider {
+      border: none;
+      border-bottom: 2px solid var(--yellow);
+      margin-top: 0.7rem;
+    }
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .container, .about-container, .projects-container, .contact-container, .education-container { max-width: 98vw; }
+    }
+    @media (max-width: 900px) {
+      .about-content { flex-direction: column; gap: 1.5em; }
+      .projects-grid { flex-direction: column; gap: 1.5em; }
+      .navbar-container { padding: 0 0.7rem; }
+      .container, .about-container, .projects-container, .contact-container, .education-container { padding: 0 0.7rem; }
+      .hero-section { padding: 70px 10px 30px; }
+    }
+    @media (max-width: 700px) {
+      .hero-title { font-size: 2rem; }
+      .hero-btns { flex-direction: column; gap: 0.7em; }
+      .section-title, .education-title { font-size: 1.2rem; }
+      .project-card { min-width: unset; max-width: 100%; }
+      .about-text, .skills-section { padding: 1em 0.7em; }
+    }
+    @media (max-width: 500px) {
+      .about-container, .container, .projects-container, .education-container { padding: 0.3rem; }
+      .hero-title { font-size: 1.1rem; }
+      .section-title, .education-title { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-logo" tabindex="0">NEHA S</a>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About/Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button id="menu-btn" class="navbar-menu-btn" aria-label="Open menu"><i data-feather="menu"></i></button>
+    </div>
+    <div id="mobile-menu" class="navbar-mobile-menu" aria-label="Mobile Navigation">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About/Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
 
-      // On page load: apply saved theme or default to light
-      document.addEventListener('DOMContentLoaded', function() {
-        const saved = localStorage.getItem('theme');
-        setTheme(saved === 'dark');
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('click', function() {
-            setTheme(!document.documentElement.classList.contains('dark'));
-          });
-          themeToggle.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              setTheme(!document.documentElement.classList.contains('dark'));
-            }
-          });
+  <!-- Hero Section -->
+  <section class="hero-section" id="home" aria-label="Hero">
+    <div class="hero-bg-anim" aria-hidden="true"></div>
+    <div class="container">
+      <h1 class="hero-title">NEHA S</h1>
+      <div class="hero-tagline">Full Stack Developer & UI Designer</div>
+      <div class="hero-typed"><span id="typed"></span></div>
+      <p class="hero-intro">Motivated and detail-oriented BCA graduate with a strong foundation in web development and a passion for building responsive, user-friendly applications. Currently enhancing my skills as a Python Full Stack Developer trainee at Pentagon Space, I am dedicated to continuous learning, clean code practices, and creating meaningful digital experiences.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary"><i data-feather="mail"></i>Hire Me</a>
+        <a href="#projects" class="btn btn-outline"><i data-feather="folder"></i>View Projects</a>
+        <a href="Neha.pdf" class="btn btn-outline" download><i data-feather="download"></i>Download Resume</a>
+      </div>
+      <div class="hero-contacts">
+        <span><a href="https://www.linkedin.com/in/neha-s-1a1658319" target="_blank" rel="noopener">linkedin.com/in/neha-s-1a1658319</a></span>
+        <span>|</span>
+        <span><a href="tel:+919743969648">+91 9743969648</a></span>
+        <span>|</span>
+        <span><a href="mailto:nehasdevadiga5@gmail.com">nehasdevadiga5@gmail.com</a></span>
+        <span>|</span>
+        <span>Udupi · 576102</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Skills Section -->
+  <section class="about-section" id="about" data-aos="fade-up" aria-label="About and Skills">
+    <div class="about-bg-anim" aria-hidden="true"></div>
+    <div class="container about-content">
+      <div class="about-text" tabindex="0">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          I'm <strong>Neha S</strong>, a BCA graduate and passionate web developer currently pursuing a <strong>Python Full Stack Developer</strong> program at Pentagon Space, Bangalore.
+        </p>
+        <p>
+          I love creating user-centric websites and web apps with clean interfaces. I've independently built fully functional projects like <strong>Villa Bliss</strong> and <strong>Zapzo</strong> that integrate frontend and backend technologies.
+        </p>
+        <p>
+          I'm detail-oriented, eager to learn, and open to exciting opportunities in development and design.
+        </p>
+      </div>
+      <div class="skills-section" tabindex="0">
+        <h3 class="skills-title"><i data-feather="code"></i> Technical Skills</h3>
+        <ul class="skills-list">
+          <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Tailwind, Bootstrap</li>
+          <li><strong>Backend:</strong> PHP, Python, Django (Learning)</li>
+          <li><strong>Database:</strong> MySQL, SQL</li>
+          <li><strong>Tools:</strong> Git, VS Code, PythonAnywhere</li>
+        </ul>
+        <h3 class="skills-title"><i data-feather="user-check"></i> Soft Skills</h3>
+        <ul class="skills-list">
+          <li>Problem Solving</li>
+          <li>Communication</li>
+          <li>Time Management</li>
+          <li>Team Collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects" data-aos="fade-up" aria-label="Projects">
+    <div class="projects-container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="zoom-in" tabindex="0">
+          <h3 class="project-title">🏡 Villa Bliss – Online Villa Booking System</h3>
+          <p class="project-desc">Developed a fully functional villa booking website allowing users to explore, filter, and book luxurious villas based on preferences such as pool, view, room type, and food services. Integrated admin dashboard for real-time booking and room management.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+          <a href="http://localhost/villas/" class="btn btn-primary project-btn" tabindex="0"><i data-feather="external-link"></i>View</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="100" tabindex="0">
+          <h3 class="project-title">🛒 Zapzo – Online Grocery Store</h3>
+          <p class="project-desc">Built a full grocery eCommerce site with search, categories, payments, cart & admin panel.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">SQL</span>
+          </div>
+          <a href="http://localhost/zapzo/" class="btn btn-primary project-btn" tabindex="0"><i data-feather="external-link"></i>View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education-section" id="education" data-aos="fade-up" aria-label="Education">
+    <div class="education-container">
+      <h2 class="education-title">EDUCATION</h2>
+      <div class="education-details">
+        <div>Milagres College | 2022 – 2025</div>
+        <div>Bachelor of Computer Applications (BCA)</div>
+      </div>
+      <hr class="education-divider" />
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact" data-aos="fade-up" aria-label="Contact">
+    <div class="contact-container">
+      <h2 class="section-title">Contact</h2>
+      <form id="contact-form" class="contact-form" action="contact.php" method="POST" autocomplete="off" novalidate aria-label="Contact Form">
+        <input name="name" type="text" placeholder="Name" required class="contact-input" aria-label="Name"/>
+        <input name="email" type="email" placeholder="Email" required class="contact-input" aria-label="Email"/>
+        <input name="subject" type="text" placeholder="Subject" required class="contact-input" aria-label="Subject"/>
+        <textarea name="message" placeholder="Message" required class="contact-textarea" aria-label="Message"></textarea>
+        <button type="submit" class="btn btn-primary contact-btn"><i data-feather="send"></i>Submit</button>
+        <div id="form-message" style="margin-top:1em;font-weight:600;"></div>
+      </form>
+      <div class="contact-icons">
+        <a href="https://github.com/neha05prg" target="_blank" rel="noopener" aria-label="GitHub"><i data-feather="github"></i></a>
+        <a href="https://linkedin.com/in/neha-s-1a1658319" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+        <a href="mailto:nehasdevadiga5@gmail.com" aria-label="Email"><i data-feather="mail"></i></a>
+      </div>
+      <div class="contact-location">Udupi, Karnataka, 576102</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Footer">
+    <div class="footer-icons">
+      <a href="https://github.com/neha05prg" target="_blank" rel="noopener" aria-label="GitHub"><i data-feather="github"></i></a>
+      <a href="https://linkedin.com/in/neha-s-1a1658319" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+      <a href="mailto:nehasdevadiga5@gmail.com" aria-label="Email"><i data-feather="mail"></i></a>
+    </div>
+    <div class="footer-copy">&copy; 2025 NEHA S</div>
+  </footer>
+
+  <!-- Hidden background music -->
+  <audio id="bg-music" src="music/sample1.mp3" autoplay loop muted style="display:none"></audio>
+
+  <script>
+    feather.replace();
+    // Mobile menu
+    document.getElementById('menu-btn').onclick = function() {
+      document.getElementById('mobile-menu').classList.toggle('navbar-mobile-menu-active');
+    };
+    // Typed.js
+    var typed = new Typed('#typed', {
+      strings: ['Full Stack Developer', 'UI Designer', 'Open Source Enthusiast'],
+      typeSpeed: 60, backSpeed: 30, backDelay: 1500, loop: true
+    });
+    // AOS
+    AOS.init({ once: true, duration: 900, offset: 80 });
+    // Set background music volume to soft
+    window.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('bg-music');
+      if (audio) {
+        audio.volume = 0.15;
+        audio.play().catch(function() {
+          var unlockAudio = function() {
+            audio.muted = false;
+            audio.volume = 0.15;
+            audio.play();
+            window.removeEventListener('click', unlockAudio);
+            window.removeEventListener('keydown', unlockAudio);
+            window.removeEventListener('touchstart', unlockAudio);
+          };
+          window.addEventListener('click', unlockAudio);
+          window.addEventListener('keydown', unlockAudio);
+          window.addEventListener('touchstart', unlockAudio);
+        });
+      }
+    });
+    // Accessibility: highlight nav on scroll
+    window.addEventListener('scroll', function() {
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function(section) {
+        if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+          navLinks.forEach(function(link) { link.classList.remove('active'); });
+          var id = section.getAttribute('id');
+          var activeLink = document.querySelector('.nav-link[href="#' + id + '"]');
+          if(activeLink) activeLink.classList.add('active');
         }
       });
-    </script>
-  </body>
-</html> 
+    });
+    // Contact form AJAX
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        formMessage.textContent = '';
+        const data = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          subject: form.subject.value.trim(),
+          message: form.message.value.trim()
+        };
+        // Simple validation
+        if (!data.name || !data.email || !data.subject || !data.message) {
+          formMessage.textContent = 'Please fill in all fields.';
+          formMessage.style.color = 'red';
+          return;
+        }
+        try {
+          const res = await fetch('/contact', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+          });
+          const result = await res.json();
+          formMessage.textContent = result.message;
+          formMessage.style.color = result.success ? '#ffd60a' : 'red';
+          if (result.success) form.reset();
+        } catch (err) {
+          formMessage.textContent = 'Network error. Please try again.';
+          formMessage.style.color = 'red';
+        }
+      });
+    }
+  </script>
+</body>
+</html>    
